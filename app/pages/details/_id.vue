@@ -4,6 +4,7 @@
     <InfoText class="info-text" />
     <InfoDetails class="info-details" />
     <InfoPhotos class="info-photos" />
+    <InfoMaps class="info-maps" />
   </div>
 </template>
 
@@ -13,6 +14,7 @@ import PageHeader from '~/components/PageHeader.vue'
 import InfoText from '~/components/InfoText.vue'
 import InfoDetails from '~/components/InfoDetails.vue'
 import InfoPhotos from '~/components/InfoPhotos.vue'
+import InfoMaps from '~/components/InfoMaps.vue'
 
 export default {
   name: 'DetailsPage',
@@ -20,17 +22,18 @@ export default {
     PageHeader,
     InfoText,
     InfoDetails,
-    InfoPhotos
+    InfoPhotos,
+    InfoMaps
   },
   computed: {
     ...mapState(['houseDetails'])
   },
   async created () {
     await this.fetchHouseDetails(this.$route.params.id)
-    console.log(this.houseDetails.URL)
+    await this.fetchHouseLocation(this.houseDetails)
   },
   methods: {
-    ...mapActions(['fetchHouseDetails'])
+    ...mapActions(['fetchHouseDetails', 'fetchHouseLocation'])
   }
 }
 </script>

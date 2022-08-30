@@ -49,14 +49,10 @@ export default {
           name: d.Naam,
           value: d.Waarde
         }))
-        console.log(details)
         return details
       }
       return ''
     }
-  },
-  created () {
-    console.log(0, this.houseDetails)
   }
 }
 </script>
