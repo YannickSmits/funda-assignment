@@ -27,17 +27,15 @@ import InfoCard from './InfoCard.vue'
 import titleFunction from './mixins/titleFunction'
 
 export default {
+  name: 'InfoDetails',
   components: {
     InfoCard
   },
   mixins: [titleFunction],
-  data () {
-    return {
-    }
-  },
   computed: {
     ...mapState(['houseDetails']),
     housePrice () {
+      // Could be improved by optional chaining but it is not allowed by NuxtJS
       if (this.houseDetails.Prijs) {
         return this.houseDetails.Prijs.Koopprijs || ''
       }
@@ -45,11 +43,10 @@ export default {
     },
     houseCharacteristics () {
       if (this.houseDetails.KenmerkenKort) {
-        const details = this.houseDetails.KenmerkenKort.Kenmerken.map(d => ({
+        return this.houseDetails.KenmerkenKort.Kenmerken.map(d => ({
           name: d.Naam,
           value: d.Waarde
         }))
-        return details
       }
       return ''
     }
@@ -58,28 +55,29 @@ export default {
 </script>
 
 <style lang='scss'>
+@import "@/styles/variables.scss";
 .details {
   .divider {
     height: 1px;
     width: 100%;
     background: #999;
-    margin: 12px 0px;
+    margin: $base-size*3 0px;
   }
   .details-price {
     font-size: 20px;
-    padding: 16px 0px;
+    padding: $base-size*4 0px;
     font-weight: 600;
     .details-price__name {
-      color: #888;
-      padding-right: 12px;
+      color: $light-grey;
+      padding-right: $base-size*3;
     }
   }
   .details-characteristics-line {
     font-size: 16px;
     .details-characteristics__name {
-      color: #888;
+      color: $light-grey;
       font-weight: 800;
-      padding-right: 12px;
+      padding-right: $base-size*3;
     }
   }
 }

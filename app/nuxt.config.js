@@ -57,14 +57,6 @@ export default {
     credentials: false
   },
   proxy: {
-    // Simple proxy
-    // '/api': {
-    //   target: 'https://jsonplaceholder.typicode.com/todos/1',
-    //   changeOrigin: true,
-    //   pathRewrite: { '^/api': '' }
-    // },
-    // '/apifunda': 'http://partnerapi.funda.nl/feeds/Aanbod.svc/json/detail/ac1b0b1572524640a0ecc54de453ea9f/koop/cf6ffb70-86de-4077-bd5e-6d7d257eb0ce'
-
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

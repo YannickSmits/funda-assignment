@@ -19,17 +19,23 @@ import InfoCard from './InfoCard.vue'
 import titleFunction from './mixins/titleFunction'
 
 export default {
+  name: 'InfoMaps',
   components: {
     InfoCard
   },
   mixins: [titleFunction],
+  data () {
+    return {
+      defaultCoordinates: [52.3771842688297, 4.919207941116205]
+    }
+  },
   computed: {
     ...mapState(['houseDetails', 'houseLocation']),
     calculatedLonLat () {
       if (this.houseLocation.lat) {
         return [this.houseLocation.lat, this.houseLocation.lng]
       }
-      return [52.3771842688297, 4.919207941116205]
+      return this.defaultCoordinates
     }
   }
 }

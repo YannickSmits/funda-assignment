@@ -1,7 +1,9 @@
 <template>
   <div>
     <PageHeader />
-    <div class="title">Search House By ID</div>
+    <div class="title">
+      Search House By ID
+    </div>
     <input v-model="searchId" placeholder="">
     <button @click="searchHouse()">
       Search
@@ -31,22 +33,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .title {
-    padding: 24px 0px;
-    font-size: 20px;
-    font-weight: bold;
-  }
-  input {
-    height: 24px;
-    width: 280px;
-  }
-  button {
-    height: 30px;
-    width: 120px;
-    color: white;
-    background-color: #f7a100;
-    border: none;
-    border-radius: .125em;
-    font-weight: 400;
-  }
+@import "@/styles/variables.scss";
+.title {
+  padding: $base-size*6 0px;
+  font-size: 20px;
+  font-weight: bold;
+}
+input {
+  height: 24px;
+  width: 280px;
+}
+button {
+  height: $base_size*8;
+  width: 120px;
+  color: white;
+  background-color: $funda-orange;
+  border: none;
+  border-radius: .125em;
+  font-weight: 400;
+}
 </style>

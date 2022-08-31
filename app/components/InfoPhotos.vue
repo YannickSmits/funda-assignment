@@ -25,6 +25,7 @@ import InfoCard from './InfoCard.vue'
 import titleFunction from './mixins/titleFunction'
 
 export default {
+  name: 'InfoPhotos',
   components: {
     InfoCard,
     Carousel,
@@ -35,8 +36,7 @@ export default {
     ...mapState(['houseDetails']),
     photoList () {
       if (this.houseDetails['Media-Foto']) {
-        const photos = this.houseDetails['Media-Foto'].map(photo => photo.replace('_klein.', '_groot.'))
-        return photos
+        return this.houseDetails['Media-Foto'].map(photo => photo.replace('_klein.', '_groot.'))
       }
       return ''
     }
