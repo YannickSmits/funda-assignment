@@ -2,7 +2,7 @@
 
 ## Build Setup
 
-### `API`
+### `api`
 ```bash
 # Go to api folder and install dependencies
 $ npm install
@@ -11,7 +11,7 @@ $ npm install
 $ node app.js
 ```
 
-### `APP`
+### `app`
 ```bash
 # Go to app folder and install dependencies
 $ npm install
@@ -23,7 +23,11 @@ $ npm run dev
 ## To Do
 
 -Improve on design to show information. I'm not a designer, although I like to help think about UI/UX
+
 -Add Unit tests with Jest
+
 -Add End-to-End tests with Cypress
+
 -Change to TypeScript
+
 -Show additional information about house
