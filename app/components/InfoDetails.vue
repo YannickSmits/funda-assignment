@@ -21,7 +21,7 @@
   </div>
 </template>
 
-<script lang='ts'>
+<script>
 import { mapState } from 'vuex'
 import InfoCard from './InfoCard.vue'
 import titleFunction from './mixins/titleFunction'
